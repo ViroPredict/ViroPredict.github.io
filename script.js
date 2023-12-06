@@ -10,8 +10,6 @@ const clipboardEl = document.getElementById('clipboard')
 const resultEl = document.getElementById('result')
 
 
-
-
 clipboardEl.addEventListener('click', () => {
     const resultext = resultEl.innerText;
   if (!resultext) {
