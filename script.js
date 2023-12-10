@@ -33,14 +33,24 @@ calculateEl.addEventListener('click', () => {
 })
 
 function generateResult(HLA_G_value , KRT6A_value, LOC105378751_value, NTRK3_value, RASSF6_value, ROBO4_value, SEZ6L_value) {
+
+    let HLA_G_points = HLA_G_value * 0.8457
+    let KRT6A_points = KRT6A_value * 0.6812 - 1e-10
+    let LOC105378751_points = LOC105378751_value * 1.3234 - 5e-10
+    let NTRK3_points = NTRK3_value * 4.7261 - 1e-09
+    let RASSF6_points = RASSF6_value * (-0.4312) + 12.074
+    let ROBO4_points = ROBO4_value *  2.3901 - 1e-09
+    let SEZ6L_points = SEZ6L_value * 2
+    let sum_points = HLA_G_points + KRT6A_points + LOC105378751_points + NTRK3_points + RASSF6_points + ROBO4_points + SEZ6L_points
 	
-    let generatedPassword = 'HLA_G_points:' + (HLA_G_value * 0.8457) + '\n'
-	+ 'KRT6A_points:' + (KRT6A_value * 0.6812 - 1e-10) + '\n'
-	+ 'LOC105378751_points:' + (LOC105378751_value * 1.3234 - 5e-10) + '\n'
-	+ 'NTRK3_points:' + (NTRK3_value * 4.7261 - 1e-09) + '\n'
-	+ 'RASSF6_points:' + (RASSF6_value * (-0.4312) + 12.074) + '\n'
-	+ 'ROBO4_points:' + (ROBO4_value *  2.3901 - 1e-09) + '\n'
-	+ 'SEZ6L_points:' + (SEZ6L_value * 2) + '\n'
+    let generatedPassword = 'HLA_G_points:' + HLA_G_points + '\n'
+	+ 'KRT6A_points:' + KRT6A_points + '\n'
+	+ 'LOC105378751_points:' + LOC105378751_points + '\n'
+	+ 'NTRK3_points:' + NTRK3_points + '\n'
+	+ 'RASSF6_points:' + RASSF6_points + '\n'
+	+ 'ROBO4_points:' + ROBO4_points + '\n'
+	+ 'SEZ6L_points:' + SEZ6L_points + '\n'
+	+ 'sum_points:' + sum_points + '\n'
 
     const finalResult = generatedPassword
 
