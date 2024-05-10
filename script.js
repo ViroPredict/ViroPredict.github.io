@@ -35,14 +35,23 @@ function generateResult(SEZ6_value , AKR1C1_value, LILRA5_value, NCKAP5_value, S
     let LILRA5_points = LILRA5_value * 2.4875 + 7e-15
     let NCKAP5_points = NCKAP5_value * 1.543  - 2e-07
     let SETD9_points = SETD9_value * 0.7337  - 2e-07
-    let sum_points = SEZ6_points + AKR1C1_points + LILRA5_points + NCKAP5_points + SETD9_points 
+    let total_points = SEZ6_points + AKR1C1_points + LILRA5_points + NCKAP5_points + SETD9_points 
+	var benefit = ''
+	
+	if(total_points <= 101.90396){
+		benefit = 'high-benefit'
+	}
+	else{
+		benefit = 'low-benefit'
+	}
 	
     let generatedPassword = 'SEZ6_points:' + SEZ6_points + '\n'
 	+ 'AKR1C1_points:' + AKR1C1_points + '\n'
 	+ 'LILRA5_points:' + LILRA5_points + '\n'
 	+ 'NCKAP5_points:' + NCKAP5_points + '\n'
 	+ 'SETD9_points:' + SETD9_points + '\n'
-	+ 'sum_points:' + sum_points + '\n'
+	+ 'total_points:' + total_points + '\n'
+	+ benefit
 
     const finalResult = generatedPassword
 
